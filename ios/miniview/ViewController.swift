@@ -25,7 +25,7 @@ struct navItem {
 
 
 
-class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDelegate, ModalViewControllerDelegate {
     
     var wv: WKWebView!
     var nested = false
@@ -36,8 +36,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
     var background = K.background
     var tint = K.tint
     
+    
+    func modalViewControllerDidFinish(data: String) {
+        self.wv.evaluateJavaScript("window.postMessage({\"image\": \"\(data)\"})")
+        print("Sent to js")
+    }
+    
+
+    
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        
+                
         if let frame = navigationAction.targetFrame,
             frame.isMainFrame {
             return nil
@@ -45,9 +53,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
         
         let v = ModalController()
         v.url = navigationAction.request.url?.absoluteString ?? url
+        print(v.url)
+        v.delegate = self
+        v.parentController = self
         present(v, animated: true)
     
         return nil
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        //print("hello")
+        return .darkContent
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,10 +71,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
         
         
         view.backgroundColor = background
-        navigationController?.navigationBar.tintColor = tint
+        /*navigationController?.navigationBar.tintColor = tint
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = background
-        navigationController?.navigationBar.backgroundColor = background
+        navigationController?.navigationBar.backgroundColor = background*/
+        
+        navigationController?.navigationBar.barStyle = .default
+        
+        //navigationController?.preferredStatusBarStyle = .darkContent
+        
+        //navigationController?.hidesBarsOnSwipe = true
+        setNeedsStatusBarAppearanceUpdate()
         
         let config = UIImage.SymbolConfiguration(pointSize: 25.0, weight: .medium, scale: .medium)
         let image2 = UIImage(systemName: "chevron.left", withConfiguration: config)
@@ -78,6 +101,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
+
+
+        
         if !nested {
             let btn = UIButton(type: .custom, primaryAction: UIAction(handler: {_ in }))
             let newBackButton = UIBarButtonItem(customView: btn)
@@ -96,6 +122,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
     }
     
     func createWebview(){
+        
+        print("create")
         
         activity = UIActivityIndicatorView()
         activity.center = self.view.center
@@ -119,10 +147,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
         wv = WKWebView(frame: frame, configuration: cfg)
         wv.isOpaque = false;
         wv.backgroundColor = background
+        //wv.scrollView.automaticallyAdjustsScrollIndicatorInsets = true
+        //wv.scrollView.sc
         wv.scrollView.contentInsetAdjustmentBehavior = .never
         wv.addSubview(activity)
         wv.uiDelegate = self
         wv.scrollView.delegate = self
+        
+        
+    
+        //wv.scrollView.contentInset.top = 200
         //activity.startAnimating()
         view.addSubview(wv)
         wv.load(URLRequest(url:URL(string: url)!))
@@ -143,9 +177,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, WKUIDele
         super.viewDidLoad()
         navigationController?.delegate = self
         
+        
         if !nested {
             createWebview()
         }
+    }
+    
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+     if (error as NSError).code == -999 {
+        return
+     }
+     print(error)
     }
     
     @available(iOS 15, *)

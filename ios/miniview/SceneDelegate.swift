@@ -7,6 +7,12 @@
 
 import UIKit
 
+class CustomNavigationController: UINavigationController {
+    override var childForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -30,8 +36,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = windowScene
         window.makeKeyAndVisible()
 
+        let navViewController = CustomNavigationController(rootViewController: viewController)
+        //navViewController.hidesBarsOnSwipe = true
         
-        let navViewController = UINavigationController(rootViewController: viewController)
         //let webView = WKWebView(frame: .zero)
         //navViewController.view = webView
         window.rootViewController = navViewController

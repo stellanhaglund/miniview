@@ -19,6 +19,7 @@ class TabController: UITabBarController, UITabBarControllerDelegate, UINavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self
+        navigationController?.isNavigationBarHidden = true
         self.delegate = self
     }
     

@@ -3,4 +3,114 @@
    uuid = "48BBE661-63A3-41C4-BEE3-7C9FE225DD28"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "miniview/ModalController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "ModalController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D - e78ebfe62f46ce39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "miniview.ModalController.ctrl.getter : Swift.Optional&lt;__C.WKUserContentController&gt;"
+                  moduleName = "miniview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stellanhaglund/Documents/code/miniview/ios/miniview/ModalController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D - cb5992702770a2c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "miniview.ModalController.ctrl.setter : Swift.Optional&lt;__C.WKUserContentController&gt;"
+                  moduleName = "miniview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stellanhaglund/Documents/code/miniview/ios/miniview/ModalController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D - ba06f72f03bb136"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "miniview.ModalController.ctrl.modify : Swift.Optional&lt;__C.WKUserContentController&gt;"
+                  moduleName = "miniview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stellanhaglund/Documents/code/miniview/ios/miniview/ModalController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D - b958d96e6b3d0e13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "miniview.ModalController.ctrl.modify : Swift.Optional&lt;__C.WKUserContentController&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "miniview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stellanhaglund/Documents/code/miniview/ios/miniview/ModalController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D - 9151bcf1a126b2ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "miniview.ModalController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; miniview.ModalController"
+                  moduleName = "miniview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stellanhaglund/Documents/code/miniview/ios/miniview/ModalController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "4D9D798A-7525-46C8-8EAA-AC7060D8B12D - 196f2b6a11048de8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "miniview.ModalController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;miniview.ModalController&gt;"
+                  moduleName = "miniview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stellanhaglund/Documents/code/miniview/ios/miniview/ModalController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

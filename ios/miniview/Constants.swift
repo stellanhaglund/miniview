@@ -8,6 +8,8 @@ import UIKit
 
 struct K {
     static let url = "https://test.meetme.ai/"
-    static let background = UIColor(red: 24/255, green: 24/255, blue: 27/255, alpha: 1)
+    //static let url = "http://localhost:5173/chat"
+    //static let background = UIColor(red: 24/255, green: 24/255, blue: 27/255, alpha: 1)
+    static let background = UIColor.white
     static let tint = UIColor.white
 }

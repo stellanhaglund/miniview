@@ -6,10 +6,13 @@ extension ViewController: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "myMessage" {
-            
+                        
             guard let data = message.body as? [String: Any] else { return }
             
             switch data["type"] as! String {
+                
+            case "data":
+                print("incoming data")
                 
             case "popstate":
                 print("navigated backwards")
@@ -26,6 +29,8 @@ extension ViewController: WKScriptMessageHandler {
                 guard let app = route["app"] as? [String: Any] else { return }
                 
                 switch app["type"] as! String {
+                    
+
                     
                 case "modal":
                     print("should show modal")
@@ -62,3 +67,29 @@ extension ViewController: WKScriptMessageHandler {
     }
     
 }
+
+extension ModalController: WKScriptMessageHandler {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "myMessage" {
+            
+            print("incoming message modal", message.body)
+                        
+            guard let data = message.body as? [String: String] else { return }
+        
+            switch data["type"] as String? {
+                
+            case "data":
+                print("incoming data")
+                delegate?.modalViewControllerDidFinish(data:data["data"] as String? ?? "")
+                parentController?.dismiss(animated: true)
+            default:
+                print("default")
+                
+            }
+            
+        }
+    }
+    
+}
+
